@@ -1,4 +1,5 @@
 //import Axios from 'axios';
+import * as bootstrap from 'bootstrap'
 // Define a function to sanitize input
 function sanitizeInput(input: string): string {
   // Remove any non-alphanumeric characters, except for spaces, periods, commas, and hyphens
@@ -20,10 +21,20 @@ const durationInput = document.getElementById('duration_hours') as HTMLInputElem
 const serviceTypeInput = document.getElementById('service_type') as HTMLInputElement;
 const additionalNotesInput = document.getElementById('additional_notes') as HTMLInputElement;
 const locationInput = document.getElementById('location') as HTMLInputElement;
+const toastLiveExample = document.getElementById('liveToast') as Element;
 
 // Add a submit event listener to the form
 form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Prevent the default form submission behavior
+
+
+
+
+
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+
+
+
 
   // Sanitize the form data
   const sanitizedData = {
@@ -55,6 +66,7 @@ form.addEventListener('submit', async (event) => {
     if (response.ok) {
       console.log('Data sent successfully');
       form.reset();
+      toastBootstrap.show();
     } else {
       console.error('Failed to send data');
     }

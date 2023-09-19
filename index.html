@@ -24,16 +24,16 @@
         <form action="" class="" id="myForm">
           <div class="mb-3" hidden>
             <label for="business_id" class="form-label">Full name</label>
-            <input type="text" class="form-control" id="business_id" name="business_id" value="makeupby-pyd">
+            <input type="text" class="form-control" id="business_id" name="business_id" value="makeupby-pyd" required>
           </div>
           <div class="mb-3">
             <label for="full_name" class="form-label">Full name</label>
-            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full name">
+            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full name" required>
           </div>
           <div class="row">
             <div class="col-auto mb-3">
               <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
             </div>
             <div class="col-auto mb-3">
               <label for="phone" class="form-label">Phone</label>
@@ -41,20 +41,20 @@
             </div>
             <div class="col-auto mb-3">
               <label for="booking_datetime" class="form-label">Booking date</label>
-              <input type="date" class="form-control" id="booking_datetime" name="booking_datetime">
+              <input type="date" class="form-control" id="booking_datetime" name="booking_datetime" required>
             </div>
             <div class="col-auto mb-3">
               <label for="duration_hours" class="form-label">Duration - hours</label>
-              <input type="number" class="form-control" id="duration_hours" name="duration_hours" min="1">
+              <input type="number" class="form-control" id="duration_hours" name="duration_hours" min="1" required>
             </div>
             <div class="col-auto mb-3">
               <label for="service_type" class="form-label">Service type</label>
               <input type="text" class="form-control" id="service_type" name="service_type"
-                placeholder="Make Up, Consultation etc">
+                placeholder="Make Up, Consultation etc" required>
             </div>
             <div class="col-auto mb-3">
               <label for="location" class="form-label">Location</label>
-              <input type="text" class="form-control" id="location" name="location">
+              <input type="text" class="form-control" id="location" name="location" required>
             </div>
           </div>
 
@@ -67,6 +67,18 @@
           </div>
         </form>
 
+      </div>
+    </div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" tabindex="99">
+      <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Booking</strong>
+          <small>just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Your booking is being processed
+        </div>
       </div>
     </div>
   </main>
