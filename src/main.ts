@@ -1,4 +1,4 @@
-
+//import Axios from 'axios';
 // Define a function to sanitize input
 function sanitizeInput(input: string): string {
   // Remove any non-alphanumeric characters, except for spaces, periods, commas, and hyphens
@@ -42,8 +42,7 @@ form.addEventListener('submit', async (event) => {
 
   console.log(sanitizedData);
   try {
-    // const res = await Axios.post('https://gq1ggscc42.execute-api.us-east-1.amazonaws.com/dev/booking', sanitizedData);
-    // console.log(res);
+
     // Send a POST request to the endpoint
     const response = await fetch('https://gq1ggscc42.execute-api.us-east-1.amazonaws.com/dev/booking', {
       method: 'POST',
@@ -55,6 +54,7 @@ form.addEventListener('submit', async (event) => {
 
     if (response.ok) {
       console.log('Data sent successfully');
+      form.reset();
     } else {
       console.error('Failed to send data');
     }
