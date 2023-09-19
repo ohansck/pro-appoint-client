@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro-Appoint Booking Service</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+  <main class="container">
+
+    <div class="card col-auto">
+      <div class="card-header">
+        <h5 class="card-title text-center">"Your Beauty, Your Time, Your Way - Book Your Glow Today!"</h5>
+      </div>
+      <div class="card-body">
+
+        <form action="" class="" id="myForm">
+          <div class="mb-3" hidden>
+            <label for="business_id" class="form-label">Full name</label>
+            <input type="text" class="form-control" id="business_id" name="business_id" value="makeupby-pyd">
+          </div>
+          <div class="mb-3">
+            <label for="full_name" class="form-label">Full name</label>
+            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full name">
+          </div>
+          <div class="row">
+            <div class="col-auto mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            </div>
+            <div class="col-auto mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="phone" class="form-control" id="phone" name="phone" placeholder="08012345678">
+            </div>
+            <div class="col-auto mb-3">
+              <label for="booking_datetime" class="form-label">Booking date</label>
+              <input type="date" class="form-control" id="booking_datetime" name="booking_datetime">
+            </div>
+            <div class="col-auto mb-3">
+              <label for="duration_hours" class="form-label">Duration - hours</label>
+              <input type="number" class="form-control" id="duration_hours" name="duration_hours" min="1">
+            </div>
+            <div class="col-auto mb-3">
+              <label for="service_type" class="form-label">Service type</label>
+              <input type="text" class="form-control" id="service_type" name="service_type"
+                placeholder="Make Up, Consultation etc">
+            </div>
+            <div class="col-auto mb-3">
+              <label for="location" class="form-label">Location</label>
+              <input type="text" class="form-control" id="location" name="location">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="additional_notes" class="form-label">Additional notes</label>
+            <textarea class="form-control" id="additional_notes" name="additional_notes" rows="3"></textarea>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
