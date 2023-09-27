@@ -1,4 +1,4 @@
-//import Axios from 'axios';
+import Axios from 'axios';
 import * as bootstrap from 'bootstrap'
 // Define a function to sanitize input
 function sanitizeInput(input: string): string {
@@ -9,6 +9,17 @@ function sanitizeInput(input: string): string {
 // Function to convert hours to minutes
 function hoursToMinutes(hours: number): number {
   return hours * 60;
+}
+
+function setPhoneCountryCode(phoneNumber: string): string {
+  // Check if the phone number starts with a zero
+  if (phoneNumber.startsWith('0')) {
+    // Replace the first zero with +234
+    return phoneNumber.replace('0', '+234');
+  }
+
+  // If the phone number doesn't start with a zero, return it as is
+  return phoneNumber;
 }
 
 // Get form element references
@@ -27,14 +38,7 @@ const toastLiveExample = document.getElementById('liveToast') as Element;
 form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Prevent the default form submission behavior
 
-
-
-
-
   const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-
-
-
 
   // Sanitize the form data
   const sanitizedData = {
@@ -42,7 +46,7 @@ form.addEventListener('submit', async (event) => {
     client: {
       full_name: sanitizeInput(fullNameInput.value),
       email: emailInput.value,
-      phone: phoneInput.value,
+      phone: setPhoneCountryCode(phoneInput.value),
     },
     booking_datetime: bookingDatetimeInput.value,
     duration_minutes: hoursToMinutes(Number(durationInput.value)),
@@ -50,7 +54,7 @@ form.addEventListener('submit', async (event) => {
     additional_notes: sanitizeInput(additionalNotesInput.value),
     location: sanitizeInput(locationInput.value),
   };
-
+  console.log(phoneInput.value);
   console.log(sanitizedData);
   try {
 
